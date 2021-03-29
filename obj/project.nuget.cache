@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZsXnR8jEiX6OA9fhufOWuHixhWi20uBe0dsEyCqeuiYukQUsJwuuS+zsykN8FJlyd59cAGTPGIw477HexY5lww==",
+  "dgSpecHash": "ShMxONJ3xCpM2GFrtrWIzOz4kWvsI3I9Es9+Ru7oxLbdXPzMdmaPLuyMTKZowV+9Z+DK5vAdplUg8y6M7S8x6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
+  "projectFilePath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giova\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\giova\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

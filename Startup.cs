@@ -1,3 +1,4 @@
+using CoronaVirusAPI.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,7 @@ namespace CoronaVirusAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<Data.MongoDB>();
+            services.AddSingleton<InfectadoRepository>();
             services.AddControllers();
             services.AddSwaggerGen();
         }

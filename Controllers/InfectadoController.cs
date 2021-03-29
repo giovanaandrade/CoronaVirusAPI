@@ -1,8 +1,12 @@
 ﻿using CoronaVirusAPI.Data.Collections;
 using CoronaVirusAPI.Models;
+using CoronaVirusAPI.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CoronaVirusAPI.Controllers
 {
@@ -10,29 +14,45 @@ namespace CoronaVirusAPI.Controllers
     [Route("[controller]")]
     public class InfectadoController : ControllerBase
     {
-        Data.MongoDB _mongoDB;
-        IMongoCollection<Infectado> _infectadosCollection;
+        InfectadoRepository _infectadoRepository;
 
-        public InfectadoController(Data.MongoDB mongoDB)
+        public InfectadoController(InfectadoRepository infectadoRepository)
         {
-            _mongoDB = mongoDB;
-            _infectadosCollection = _mongoDB.DB.GetCollection<Infectado>(typeof(Infectado).Name.ToLower());
+            _infectadoRepository = infectadoRepository;
         }
 
         [HttpPost]
-        public ActionResult SalvarInfectado([FromBody] InfectadoViewModel infectadoViewModel)
+        public async Task<IActionResult> SalvarInfectado([FromBody] InfectadoViewModel infectadoViewModel)
         {
-            var infectado = new Infectado(infectadoViewModel.DataNascimento, infectadoViewModel.Genero, infectadoViewModel.Latitude, infectadoViewModel.Longitude);
+            try
+            {
+                await _infectadoRepository.SalvarInfectado(infectadoViewModel);
 
-            _infectadosCollection.InsertOne(infectado);
+                return StatusCode(201, "Infectado adicionado com sucesso");
+            }
+            catch (Exception e)
+            {
 
-            return StatusCode(201, "Infectado adicionado com sucesso");
+                return Conflict(e.Message);
+            }
+
+           
         }
 
         [HttpGet]
-        public ActionResult ObterInfectados()
+        public async Task<IActionResult> ObterInfectados()
         {
-            var infectados = _infectadosCollection.Find(Builders<Infectado>.Filter.Empty).ToList();
+            List<Infectado> infectados;
+
+            try
+            {
+                infectados = await _infectadoRepository.ObterTodosInfectados();
+            }
+            catch (Exception e)
+            {
+
+                return Conflict(e.Message);
+            }
 
             return Ok(infectados);
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI.csproj": {}
+    "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\CoronaVirusAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI.csproj": {
+    "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\CoronaVirusAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
+        "projectUniqueName": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
         "projectName": "CoronaVirusAPI",
-        "projectPath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
+        "projectPath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\CoronaVirusAPI.csproj",
         "packagesPath": "C:\\Users\\giova\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\obj\\",
+        "outputPath": "C:\\Users\\giova\\source\\repos\\CoronaVirusAPI\\CoronaVirusAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giova\\AppData\\Roaming\\NuGet\\NuGet.Config",
